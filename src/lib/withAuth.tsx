@@ -1,7 +1,8 @@
 "use client";
+
 import { useEffect, ComponentType } from "react";
-import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const withAuth = (Component: ComponentType) => {
   return (props: any) => {

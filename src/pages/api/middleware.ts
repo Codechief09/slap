@@ -1,10 +1,9 @@
 import type { NextRequest } from "next/server";
-import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";z
 import { prisma } from "@/lib/prisma";
 
 export async function middleware(req: NextRequest) {
   const sessionToken = req.cookies.get("session-token");
-  console.log("Sss", sessionToken);
 
   if (!sessionToken) {
     return NextResponse.redirect(new URL("/", req.url));

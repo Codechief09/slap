@@ -1,10 +1,9 @@
-// "use client";
 import React from "react";
+import { Session } from "next-auth";
+
+import AppWalletProvider from "@/components/AppWalletProvider";
 
 import "./globals.css";
-import AppWalletProvider from "@/components/AppWalletProvider";
-// import { SessionProvider } from "next-auth/react";
-import { Session } from "next-auth";
 
 export default function RootLayout({
   children,
@@ -16,9 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* <SessionProvider session={session}> */}
-          <AppWalletProvider  session={session}>{children}</AppWalletProvider>
-        {/* </SessionProvider> */}
+        <AppWalletProvider session={session}>{children}</AppWalletProvider>
       </body>
     </html>
   );

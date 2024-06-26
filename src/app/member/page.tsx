@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
-import { useAtom } from "jotai";
-import { counterAtom, userAtom } from "@/lib/store";
 import { useRouter } from "next/navigation";
+import { useAtom } from "jotai";
+
+import { counterAtom, userAtom } from "@/lib/store";
 import withAuth from "@/lib/withAuth";
 
 const MemberPage: React.FC = () => {
@@ -43,4 +44,5 @@ const MemberPage: React.FC = () => {
     </div>
   );
 };
+
 export default withAuth(MemberPage);

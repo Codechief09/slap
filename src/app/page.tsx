@@ -1,11 +1,12 @@
 "use client";
 
 import React from "react";
-import { useWallet } from "@solana/wallet-adapter-react";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { useAtom } from "jotai";
+
+import { useWallet } from "@solana/wallet-adapter-react";
 import { userAtom } from "@/lib/store";
-import dynamic from "next/dynamic";
 
 const WalletMultiButton = dynamic(
   async () =>

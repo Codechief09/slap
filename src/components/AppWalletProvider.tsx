@@ -1,16 +1,19 @@
 "use client";
+
 import React, { useMemo } from "react";
+import { SessionProvider } from "next-auth/react";
+import { Session } from "next-auth";
+
 import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
-import { SessionProvider } from "next-auth/react";
+import { PhantomWalletAdapter } from "@solana/wallet-adapter-phantom";
 import { clusterApiUrl } from "@solana/web3.js";
 import "@solana/wallet-adapter-react-ui/styles.css";
-import { PhantomWalletAdapter } from "@solana/wallet-adapter-phantom";
-import { Session } from "next-auth";
+
 
 export default function AppWalletProvider({
   children,
@@ -23,7 +26,6 @@ export default function AppWalletProvider({
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
   const wallets = useMemo(
     () => [new PhantomWalletAdapter()],
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [network]
   );
 

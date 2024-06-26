@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
+
 import { prisma } from "./prisma";
 
 export async function authenticate(req: NextApiRequest, res: NextApiResponse) {

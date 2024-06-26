@@ -1,6 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { prisma } from "@/lib/prisma";
 import { serialize } from "cookie";
+import nacl from 'tweetnacl';
+
+import { prisma } from "@/lib/prisma";
 
 export default async function handler(
   req: NextApiRequest,
