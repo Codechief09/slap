@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { serialize } from "cookie";
-import nacl from 'tweetnacl';
 
 import { prisma } from "@/lib/prisma";
 
