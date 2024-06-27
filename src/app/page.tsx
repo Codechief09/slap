@@ -4,8 +4,8 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { useAtom } from "jotai";
-
 import { useWallet } from "@solana/wallet-adapter-react";
+
 import { userAtom } from "@/lib/store";
 
 const WalletMultiButton = dynamic(
